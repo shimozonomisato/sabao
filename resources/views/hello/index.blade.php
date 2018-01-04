@@ -10,11 +10,11 @@
   </head>
   <body>
    <h1>Blade/Index</h1>
-   @if ($msg != '')
-   <p>こんにちは、{{$msg}}ちゃん。</p>
+   @isset ($msg)
+   <p>こんにちは、{{$msg}}さん。</p>
    @else
-   <p>何か書いて。</p>
-   @endif
+   <p>何か書いてください。</p>
+   @endisset
    <form method="POST" action="/hello">
        {{ csrf_field() }}
        <input type="text" name="msg">
