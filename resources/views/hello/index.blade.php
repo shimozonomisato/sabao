@@ -10,17 +10,16 @@
   </head>
   <body>
    <h1>Blade/Index</h1>
-   <p>&#064;forディレクティブの例</p>
-   <ol>
-    @for ($i = 1; $i < 100; $i++)
-      @if ($i % 2 == 1)
-        @continue
-          @elseif ($i <= 10)
-            <li>No,{{$i}}</li>
-          @else
-        @break
-      @endif
-    @endfor
-   </ol>
+   <p>&#064;forディレクティブの例_$loopを使う</p>
+   @foreach ($data as $item)
+     @if ($loop->first)
+     <p>＊データ一覧</p>
+     <ul>
+     @endif
+     <li>No,{{$loop->iteration}}. {{$item}}</li>
+     @if ($loop->last)
+     </ul><p>-----ここまで</p>
+     @endif
+     @endforeach
   </body>
 </html>
