@@ -10,16 +10,17 @@
   </head>
   <body>
    <h1>Blade/Index</h1>
-   <p>&#064;forディレクティブの例_$loopを使う</p>
-   @foreach ($data as $item)
-     @if ($loop->first)
-     <p>＊データ一覧</p>
-     <ul>
-     @endif
-     <li>No,{{$loop->iteration}}. {{$item}}</li>
-     @if ($loop->last)
-     </ul><p>-----ここまで</p>
-     @endif
-     @endforeach
+   <p>&#064;whileの例、phpスクリプトを使う</p>
+   <ol>
+     @php
+     $counter = 0;
+     @endphp
+     @while ($counter < count($data))
+      <li>{{$data[$counter]}}</li>
+     @php
+     $counter++;
+     @endphp
+     @endwhile
+   </ol>
   </body>
 </html>
