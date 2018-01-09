@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello</title>
-    <style>
-    body {font-size:16px; color:#999;}
-    h1 {font-size:50px; text-align:right; color:#EF75BC; margin:-20px 0px -30px 0px; letter-spacing:-4px;}
-    </style>
-  </head>
-  <body>
-   <h1>Blade/Index</h1>
-   <p>&#064;whileの例、phpスクリプトを使う</p>
-   <ol>
-     @php
-     $counter = 0;
-     @endphp
-     @while ($counter < count($data))
-      <li>{{$data[$counter]}}</li>
-     @php
-     $counter++;
-     @endphp
-     @endwhile
-   </ol>
-  </body>
-</html>
+@extends('layouts.helloapp')
+
+@section('title', 'Index')
+
+@section('menubar')
+  @parent
+  インデックスページ
+@endsection
+
+@section('content')
+  <p>ここが本文のコンテンツです。</p>
+  <p>必要なだけ記述できます。</p>
+@endsection
+
+@section('footer')
+copyright 2017 kijitora.
+@endsection
