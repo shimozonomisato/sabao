@@ -9,10 +9,10 @@
 
 @section('content')
   <p>ここが本文のコンテンツです。</p>
-  <p>必要なだけ記述できます。</p>
 
-    @include('components.message', ['msg_title'=>'ok', 'msg_content'=>'サブビューです。'])
-  
+  @each('components.item', $data, 'item')
+  {{-- ↑$data変数を'item'に入れて繰り返す --}}
+
 @endsection
 
 @section('footer')
