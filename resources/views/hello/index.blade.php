@@ -9,9 +9,9 @@
 
 @section('content')
   <p>ここが本文のコンテンツです。</p>
+  <p>Controller value<br>'message' = {{$message}}</p>
+  <p>ViewComposer value<br>'view_message' = {{$view_message}}</p>
 
-  @each('components.item', $data, 'item')
-  {{-- ↑$data変数を'item'に入れて繰り返す --}}
 
 @endsection
 
