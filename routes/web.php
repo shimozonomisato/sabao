@@ -1,6 +1,6 @@
 <?php
 
-//use App\Http\Middleware\HelloMiddleware;
+use App\Http\Middleware\HelloMiddleware;
 
 /*
 |--------------------------------------------------------------------------
