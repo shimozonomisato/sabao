@@ -10,6 +10,15 @@
 @section('content')
 
   <p>{{$msg}}</p>
+  @if (count($errors) > 0)
+  <div>
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
   <table>
     <form action="/hello" method="post">
       {{ csrf_field() }}
